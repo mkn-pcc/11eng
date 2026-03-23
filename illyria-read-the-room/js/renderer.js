@@ -89,7 +89,7 @@ function renderEnding(ending) {
         <hr style="margin: 8px 0; border-color: #ddd;">
         <strong>CITP & CAVAB Analysis:</strong><br>
         <em>Concepts:</em> Your choices strongly reflected themes of ${concepts}.<br>
-        <em>Attitudes:</em> You ${attitudes} the standard stances people hold toward social hierarchies.<br>
+        <em>Attitudes:</em> You ${attitudes} the standard stances people hold towards social hierarchies.<br>
         <em>Values:</em> You proved you considered ${values} to be most worthwhile.<br>
         <em>Beliefs:</em> You acted as if identity is ${beliefs}.
     `;
