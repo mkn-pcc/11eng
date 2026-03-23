@@ -191,6 +191,10 @@
 #npc-portrait {
     max-height: 500px;
     transition: opacity 0.3s ease;
+    border: none;
+    outline: none;
+    /* This mathematically shaves exactly 2 pixels off the outer edge to hide dirty transparent borders */
+    clip-path: inset(2px); 
 }
 
 /* Dialogue Box */
@@ -321,4 +325,27 @@
     margin-bottom: 10px;
 }
 
-.
+.reflection-box {
+    background: rgba(0,0,0,0.05);
+    border-left: 4px solid #3498db;
+    padding: 10px 15px;
+    font-style: italic;
+    font-size: 14px;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+/* Metrics Box */
+.metrics-box {
+    width: 100%;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px 20px;
+    text-align: left;
+    font-size: 13px;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
