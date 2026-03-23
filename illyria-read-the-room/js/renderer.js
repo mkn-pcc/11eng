@@ -107,3 +107,10 @@ function stopAudio() {
     audio.pause();
     audio.currentTime = 0;
 }
+
+function toggleMute() {
+    const audio = document.getElementById("bg-music");
+    const muteBtn = document.getElementById("btn-mute");
+    audio.muted = !audio.muted;
+    muteBtn.innerText = audio.muted ? "🔇 OFF" : "🔊 ON";
+}
