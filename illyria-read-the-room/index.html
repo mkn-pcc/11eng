@@ -1,1 +1,116 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Illyria High: Read the Room</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ui.css">
+</head>
+<body>
+    <div id="game-container">
+        <audio id="bg-music" src="assets/music/bensound-punky.mp3" loop></audio>
+
+        <div id="screen-title" class="screen active" style="background-image: url('assets/backgrounds/title_screen_bg.png');">
+            <img src="assets/ui/title_logo.png" alt="Illyria High: Read the Room" class="title-logo">
+            <div class="menu-buttons">
+                <button id="btn-start" class="ui-btn start-btn"><img src="assets/ui/button_start.png" alt="Start"></button>
+                <button id="btn-how-to" class="ui-btn"><img src="assets/ui/button_how_to_play.png" alt="How to Play"></button>
+            </div>
+            <button id="btn-credits-title" class="ui-btn corner-btn"><img src="assets/ui/button_credits.png" alt="Credits"></button>
+        </div>
+
+        <div id="screen-avatar" class="screen hidden" style="background-image: url('assets/backgrounds/corridor_orientation.png');">
+            <div class="avatar-select-panel">
+                <img src="assets/ui/banner_choose_your_character.png" alt="Choose Your Character" class="avatar-banner">
+                <div class="avatar-grid" id="avatar-grid"></div>
+            </div>
+        </div>
+
+        <div id="screen-game" class="screen hidden">
+            <div id="hud">
+                <img id="hud-avatar" src="" alt="Avatar">
+                <div class="hud-stats">
+                    <div class="hud-label">Social Health</div>
+                    <div class="hud-bar-bg"><div id="hud-bar-fill"></div></div>
+                    <div id="hud-val">50%</div>
+                </div>
+            </div>
+
+            <div id="scene-actors">
+                <img id="npc-portrait" src="" class="hidden" alt="NPC">
+            </div>
+
+            <div id="dialogue-ui">
+                <div id="speaker-nameplate" class="hidden">
+                    <img src="assets/ui/nameplate.png" class="nameplate-bg" alt="">
+                    <span id="speaker-name"></span>
+                </div>
+                <div id="dialogue-box">
+                    <p id="dialogue-text"></p>
+                    <div id="choices-container"></div>
+                    <button id="btn-next" class="ui-btn hidden"><img src="assets/ui/button_next.png" alt="Next"></button>
+                </div>
+            </div>
+        </div>
+
+        <div id="screen-ending" class="screen hidden" style="background-image: url('assets/backgrounds/ending_screen_bg.png');">
+            <div class="ending-panel">
+                <img src="assets/ui/ending_summary_panel.png" class="ending-bg" alt="">
+                <div class="ending-content">
+                    <img id="ending-badge" src="" alt="Ending Badge">
+                    <h2 id="ending-title"></h2>
+                    <p id="ending-summary"></p>
+                    <div class="reflection-box">
+                        <p id="ending-reflection"></p>
+                    </div>
+                    <button id="btn-replay" class="ui-btn"><img src="assets/ui/button_replay.png" alt="Replay"></button>
+                </div>
+            </div>
+            <button id="btn-credits-ending" class="ui-btn corner-btn"><img src="assets/ui/button_credits.png" alt="Credits"></button>
+        </div>
+
+        <div id="popup-overlay" class="hidden">
+            <div class="popup-box">
+                <img src="assets/ui/popup_panel.png" class="popup-bg" alt="">
+                <div class="popup-content" id="popup-text"></div>
+                <button id="btn-close-popup" class="ui-btn"><img src="assets/ui/button_back.png" alt="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <template id="credits-template">"ILLYRIA HIGH: READ THE ROOM"
+Game content by Mr and Mrs Knox.
+Game code and assets created with generative AI.
+
+Music: https://www.bensound.com/free-music-for-videos
+License code: BPM70PY8B5C1XNOS
+Artist: Benjamin Tissot
+
+*She's the Man* © 2006 Paramount Pictures.
+*Twelfth Night* by William Shakespeare.</template>
+
+    <template id="how-to-template"><b>HOW TO PLAY</b>
+- Choose an avatar.
+- Read scenes and navigate social situations.
+- Make choices that align with your approach.
+- Hidden values shift behind the scenes based on your choices.
+- Social Health updates live to show your standing.
+- Different endings depend on the pattern of choices you make.</template>
+
+    <script src="data/gameConfig.js"></script>
+    <script src="data/avatars.js"></script>
+    <script src="data/characters.js"></script>
+    <script src="data/choices.js"></script>
+    <script src="data/endingsData.js"></script>
+    <script src="data/scenes.js"></script>
+
+    <script src="js/utils.js"></script>
+    <script src="js/state.js"></script>
+    <script src="js/endings.js"></script>
+    <script src="js/renderer.js"></script>
+    <script src="js/sceneManager.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
