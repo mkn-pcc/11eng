@@ -10,7 +10,8 @@ function showScreen(screenId) {
 }
 
 function showPopup(text) {
-    document.getElementById("popup-text").innerText = text;
+    // Changed from innerText to innerHTML so <b> and <br> tags render correctly
+    document.getElementById("popup-text").innerHTML = text;
     document.getElementById("popup-overlay").classList.remove("hidden");
 }
 
