@@ -67,7 +67,7 @@ const scenesData = [
                 dialogue: "Okay, time to show what you've got. Let's see some real aggression!",
                 choices: [
                     { text: "Perform exactly the drills he asked for.", effects: {c: 10, a: -10, p: -10}, exp: "happy", reaction: { male: "Textbook form! Great job.", female: "Very clean technique." } },
-                    { text: "Ignore the drill and try a flashy, unauthorized trick.", effects: {c: -10, a: 10, p: 10}, exp: "putoff", reaction: { male: "What was that garbage? Stick to the plan!", female: "This isn't a circus. Focus!" } },
+                    { text: "Ignore the drill and try a flashy, unauthorised trick.", effects: {c: -10, a: 10, p: 10}, exp: "putoff", reaction: { male: "What was that garbage? Stick to the plan!", female: "This isn't a circus. Focus!" } },
                     { text: "Do a decent, unmemorable job.", effects: {c: 0, a: 0, p: 0}, exp: "neutral", reaction: { male: "Passable. Next!", female: "Okay, moving on." } }
                 ]
             }
@@ -128,7 +128,7 @@ const scenesData = [
                 narrative: "Authority relies on obedience to maintain the social order.",
                 dialogue: "I'm doing a spot check. Can you confirm Duke's whereabouts last night?",
                 choices: [
-                    { text: "Tell the teacher exactly what they want to hear.", effects: {c: 10, a: -10, p: -10}, exp: "happy", reaction: { male: "Thank you. Good to see responsible behavior.", female: "Thank you for your cooperation." } },
+                    { text: "Tell the teacher exactly what they want to hear.", effects: {c: 10, a: -10, p: -10}, exp: "happy", reaction: { male: "Thank you. Good to see responsible behaviour.", female: "Thank you for your cooperation." } },
                     { text: "Tell the teacher to stop interrogating students.", effects: {c: -10, a: 10, p: 10}, exp: "putoff", reaction: { male: "Excuse me? Watch your tone.", female: "That is highly disrespectful." } },
                     { text: "Claim you fell asleep early and saw nothing.", effects: {c: 0, a: 0, p: 0}, exp: "neutral", reaction: { male: "Hmm. Very well.", female: "Convenient. Fine." } }
                 ]
@@ -152,7 +152,7 @@ const scenesData = [
             {
                 npcId: "chaperone",
                 narrative: "Modern freedom exists alongside very traditional public scripts at formal events.",
-                dialogue: "Ah, the formal. A time-honored tradition. Please ensure you behave appropriately.",
+                dialogue: "Ah, the formal. A time-honoured tradition. Please ensure you behave appropriately.",
                 choices: [
                     { text: "Act perfectly traditional and compliant.", effects: {c: 10, a: -10, p: -10}, exp: "happy", reaction: { male: "A fine young gentleman. Impeccable.", female: "A lovely young lady. Very elegant." } },
                     { text: "Mock the outdated traditions loudly.", effects: {c: -10, a: 10, p: 10}, exp: "putoff", reaction: { male: "Have some respect, boy!", female: "How entirely unladylike!" } },
@@ -164,7 +164,7 @@ const scenesData = [
                 narrative: "Gendered expectations change the meaning of the same action in public spaces.",
                 dialogue: "You actually wore that? It's not really the standard for this kind of event.",
                 choices: [
-                    { text: "Apologize and say you didn't know the rules.", effects: {c: 10, a: -10, p: -10}, exp: "happy", reaction: { male: "It's fine, I'll fix your tie later.", female: "It's fine, you can borrow my gloss." } },
+                    { text: "Apologise and say you didn't know the rules.", effects: {c: 10, a: -10, p: -10}, exp: "happy", reaction: { male: "It's fine, I'll fix your tie later.", female: "It's fine, you can borrow my gloss." } },
                     { text: "Tell her you don't care about her standards.", effects: {c: -10, a: 10, p: 10}, exp: "putoff", reaction: { male: "Ugh, you're impossible.", female: "Whatever. Be tragic." } },
                     { text: "Compliment her outfit to deflect the criticism.", effects: {c: 0, a: 0, p: 0}, exp: "neutral", reaction: { male: "Well, obviously I look good.", female: "True. I did try." } }
                 ]
@@ -188,7 +188,7 @@ const scenesData = [
             {
                 npcId: "olivia",
                 narrative: "A public event forces a decision when reputation, truth, and power collide.",
-                dialogue: "Everyone is watching. The rumors are crazy right now. It's time to tell the truth. Who are you, really?",
+                dialogue: "Everyone is watching. The rumours are crazy right now. It's time to tell the truth. Who are you, really?",
                 choices: [
                     { text: "Tell them exactly what they expect to hear.", effects: {c: 10, a: -10, p: -10}, exp: "happy", reaction: { male: "Right. That makes perfect sense.", female: "Of course. Very standard." } },
                     { text: "Tell the complete, unvarnished truth, exposing everything.", effects: {c: -10, a: 10, p: 10}, exp: "putoff", reaction: { male: "Wow. You really just blew this up.", female: "I can't believe you just said that out loud." } },
@@ -200,8 +200,8 @@ const scenesData = [
                 narrative: "Institutions prioritize maintaining social stability through hierarchy.",
                 dialogue: "Quiet down! We need to maintain order here. Are you deliberately trying to cause a scene?",
                 choices: [
-                    { text: "Apologize and promise to behave.", effects: {c: 10, a: -10, p: -10}, exp: "happy", reaction: { male: "Good. Return to your place.", female: "Thank you for settling down." } },
-                    { text: "Challenge the teacher's authority publicly.", effects: {c: -10, a: 10, p: 10}, exp: "putoff", reaction: { male: "Detention! Immediately!", female: "Unacceptable behavior!" } },
+                    { text: "Apologise and promise to behave.", effects: {c: 10, a: -10, p: -10}, exp: "happy", reaction: { male: "Good. Return to your place.", female: "Thank you for settling down." } },
+                    { text: "Challenge the teacher's authority publicly.", effects: {c: -10, a: 10, p: 10}, exp: "putoff", reaction: { male: "Detention! Immediately!", female: "Unacceptable behaviour!" } },
                     { text: "Stay completely silent.", effects: {c: 0, a: 0, p: 0}, exp: "neutral", reaction: { male: "That's better.", female: "I thought so." } }
                 ]
             },
