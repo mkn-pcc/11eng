@@ -35,6 +35,9 @@ document.addEventListener("DOMContentLoaded", () => {
         renderAvatars();
     });
 
+    // Mute Button listener
+    document.getElementById("btn-mute").addEventListener("click", toggleMute);
+
     // Resize handling for 1280x720 scaling
     window.addEventListener("resize", scaleContainer);
     scaleContainer();
