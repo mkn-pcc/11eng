@@ -40,21 +40,22 @@ function updateHUD() {
 function renderScene(sceneData) {
     document.getElementById("screen-game").style.backgroundImage = `url('${sceneData.bg}')`;
     
-    const npc = charactersData[sceneData.npcId];
+    const currentNode = sceneData.nodes[gameState.nodeIndex];
+    const npc = charactersData[currentNode.npcId];
+    
     const portrait = document.getElementById("npc-portrait");
     portrait.src = `${npc.basePath}/neutral.png`;
     portrait.classList.remove("hidden");
 
     document.getElementById("speaker-nameplate").classList.remove("hidden");
     document.getElementById("speaker-name").innerText = npc.name;
-    document.getElementById("dialogue-text").innerText = sceneData.narrative + "\n\n\"" + sceneData.dialogue + "\"";
+    document.getElementById("dialogue-text").innerText = currentNode.narrative + "\n\n\"" + currentNode.dialogue + "\"";
 
     const choicesContainer = document.getElementById("choices-container");
     choicesContainer.innerHTML = "";
     document.getElementById("btn-next").classList.add("hidden");
 
-    sceneData.choices.forEach(choiceId => {
-        const choice = choicesData[choiceId];
+    currentNode.choices.forEach(choice => {
         const btn = document.createElement("button");
         btn.className = "choice-text-btn";
         btn.innerText = choice.text;
@@ -63,9 +64,9 @@ function renderScene(sceneData) {
     });
 }
 
-function renderReaction(reactionObj, npc) {
-    document.getElementById("npc-portrait").src = `${npc.basePath}/${reactionObj.exp}.png`;
-    document.getElementById("dialogue-text").innerText = "\"" + reactionObj.text + "\"";
+function renderReaction(reactionObj, exp, npc) {
+    document.getElementById("npc-portrait").src = `${npc.basePath}/${exp}.png`;
+    document.getElementById("dialogue-text").innerText = "\"" + reactionObj + "\"";
     document.getElementById("choices-container").innerHTML = "";
     document.getElementById("btn-next").classList.remove("hidden");
 }
@@ -75,6 +76,23 @@ function renderEnding(ending) {
     document.getElementById("ending-title").innerText = ending.title;
     document.getElementById("ending-summary").innerText = ending.summary;
     document.getElementById("ending-reflection").innerHTML = ending.reflection;
+    
+    // Explicit CAVAB and CITP Breakdown
+    const concepts = gameState.c > 50 ? 'power, order, and tradition' : 'freedom and fluid identity';
+    const attitudes = gameState.p > 50 ? 'challenged' : 'accepted';
+    const values = gameState.a > 50 ? 'self-expression and authenticity' : 'social alignment and group cohesion';
+    const beliefs = gameState.c > 50 ? 'assigned by society' : 'flexible and self-constructed';
+
+    document.getElementById("ending-metrics").innerHTML = `
+        <strong>FINAL METRICS</strong><br>
+        Social Health (Standing): <strong>${getSocialHealth()}%</strong> | Conformity: <strong>${gameState.c}%</strong> | Authenticity: <strong>${gameState.a}%</strong> | Power Resistance: <strong>${gameState.p}%</strong>
+        <hr style="margin: 8px 0; border-color: #ddd;">
+        <strong>CITP & CAVAB Analysis:</strong><br>
+        <em>Concepts:</em> Your choices strongly reflected themes of ${concepts}.<br>
+        <em>Attitudes:</em> You ${attitudes} the standard stances people hold toward social hierarchies.<br>
+        <em>Values:</em> You proved you considered ${values} to be most worthwhile.<br>
+        <em>Beliefs:</em> You acted as if identity is ${beliefs}.
+    `;
 }
 
 function playAudio() {
