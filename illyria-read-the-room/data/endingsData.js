@@ -21,7 +21,7 @@ const endingsData = [
         badge: "assets/ui/badge_open_challenger.png",
         condition: (c, a, p) => c <= 50 && a >= 50 && p >= 50,
         summary: "You refused to bend to expectations, pushing back against the school's subtle sorting mechanisms.",
-        reflection: "You challenged the attitudes that maintain social boundaries. By prioritizing individual freedom, you forced the world to react to a self-constructed identity."
+        reflection: "You challenged the attitudes that maintain social boundaries. By prioritising individual freedom, you forced the world to react to a self-constructed identity."
     },
     {
         id: "caught",
