@@ -24,12 +24,18 @@ function handleChoice(choiceObj, npc) {
     updateHUD();
 
     // Get reaction based on worldRead (male/female avatar)
-    const reaction = choiceObj.reaction[gameState.avatar.worldRead];
-    renderReaction(reaction, npc);
+    const reactionText = choiceObj.reaction[gameState.avatar.worldRead];
+    renderReaction(reactionText, choiceObj.exp, npc);
 }
 
-function advanceScene() {
-    gameState.sceneIndex++;
+function advanceNode() {
+    const currentScene = scenesData[gameState.sceneIndex];
+    gameState.nodeIndex++;
+    
+    if (gameState.nodeIndex >= currentScene.nodes.length) {
+        gameState.sceneIndex++;
+        gameState.nodeIndex = 0;
+    }
     loadScene();
 }
 
