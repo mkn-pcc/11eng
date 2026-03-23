@@ -25,10 +25,11 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("btn-close-popup").addEventListener("click", hidePopup);
 
     document.getElementById("btn-next").addEventListener("click", () => {
-        advanceScene();
+        advanceNode();
     });
 
     document.getElementById("btn-replay").addEventListener("click", () => {
+        stopAudio(); // Ensures ending music stops
         resetState();
         showScreen("screen-avatar");
         renderAvatars();
